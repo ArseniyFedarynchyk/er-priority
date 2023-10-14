@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start-wiremock": "node ./mocks/startup.js"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "chokidar": "^3.5.3",
     "eslint": "^8.49.0",
     "husky": "^8.0.0",
     "jasmine-core": "~4.6.0",
@@ -47,6 +49,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.0.3",
+    "tree-kill": "^1.2.2",
     "typescript": "~5.1.3"
   }
 }
