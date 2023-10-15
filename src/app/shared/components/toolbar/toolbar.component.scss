@@ -3,28 +3,34 @@ p {
 }
 
 .toolbar {
-  height: 90px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  height: 90px;
   position: sticky;
   top: 0;
-  left: 0;
   z-index: 1;
 }
 
-.btn {
-  height: 30px;
+.search-form {
+  width: 40%;
 }
 
 .user-section {
+  width: 50%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .user-info {
-  margin-right: 20px;
+  margin-right: 5%;
+}
+
+.employee {
+  margin-right: 5%;
 }
 
 .form-field {
-  width: 500px;
+  width: 100%;
+  margin-bottom: -15px;
 }
