@@ -1,11 +1,27 @@
-<div class="content-container">
+<div class="container">
   <mat-toolbar color="primary" class="toolbar">
-    <p>Stanowisko</p>
-    <p>Wyszukiwarka</p>
-    <div class="user-info">
-      <p>Info o użytkowniku</p>
-      <button>Close</button>
+    <p class="employee">Stanowisko:<br />Rejestracja</p>
+
+    <form class="search-form">
+      <mat-form-field class="form-field">
+        <input
+          matInput
+          placeholder="Wyszukaj pacjenta (imię, nazwisko, PESEL)" />
+      </mat-form-field>
+    </form>
+
+    <div class="user-section">
+      <p class="user-info">Zalogowany:<br />Arseniy Fedarynchyk</p>
+      <button
+        mat-fab
+        matTooltip="Wyloguj"
+        color="warn"
+        aria-label="Logout button">
+        <mat-icon>logout</mat-icon>
+      </button>
     </div>
   </mat-toolbar>
-  <div class="container"></div>
+  <div class="content">
+    <ng-content />
+  </div>
 </div>
