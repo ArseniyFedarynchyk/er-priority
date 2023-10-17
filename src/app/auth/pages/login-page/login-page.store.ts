@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
@@ -52,8 +51,9 @@ export class LoginPageStore extends ComponentStore<LoginPageState> {
               next: () => {
                 this.router.navigate(['/']);
               },
-              error: (error: HttpErrorResponse) =>
-                this.patchState({ error: error.error.errorMessage }),
+              error: () => {
+                this.patchState({ error: 'Credentials are incorrect' });
+              },
             }),
           ),
       ),
