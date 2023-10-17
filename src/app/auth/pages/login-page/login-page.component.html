@@ -1,24 +1,36 @@
-<form class="login-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
-  <mat-form-field class="login-form-field">
-    <mat-label>Enter your login</mat-label>
-    <input matInput [formControl]="authForm.controls.login" />
-  </mat-form-field>
-  <mat-form-field class="login-form-field">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [formControl]="authForm.controls.password" />
-    <button
-      type="button"
-      mat-icon-button
-      matSuffix
-      [attr.aria-label]="'Hide password'"></button>
-  </mat-form-field>
-  <div class="submit-button">
-    <button
-      mat-raised-button
-      color="primary"
-      class="submit-button-btn"
-      type="submit">
-      Log in
-    </button>
-  </div>
-</form>
+<ng-container *ngIf="vm$ | async as vm">
+  <form class="login-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="login-form-field">
+      <mat-label>Enter your login</mat-label>
+      <input matInput [formControl]="authForm.controls.login" />
+    </mat-form-field>
+    <mat-form-field class="login-form-field">
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        [type]="vm.isPasswordHidden ? 'password' : 'text'"
+        [formControl]="authForm.controls.password" />
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="togglePasswordVisibility()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="vm.isPasswordHidden">
+        <mat-icon>{{
+          vm.isPasswordHidden ? 'visibility_off' : 'visibility'
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-error *ngIf="vm.error">{{ vm.error }}</mat-error>
+    <div class="submit-button">
+      <button
+        mat-raised-button
+        color="primary"
+        class="submit-button-btn"
+        type="submit">
+        Log in
+      </button>
+    </div>
+  </form>
+</ng-container>
