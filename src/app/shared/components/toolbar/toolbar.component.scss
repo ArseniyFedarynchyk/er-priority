@@ -9,6 +9,10 @@ p {
   position: sticky;
   top: 0;
   z-index: 1;
+
+  -webkit-box-shadow: 0px 21px 35px -21px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 21px 35px -21px rgba(66, 68, 90, 1);
+  box-shadow: 0px 21px 35px -21px rgba(66, 68, 90, 1);
 }
 
 .search-form {
@@ -26,11 +30,11 @@ p {
   margin-right: 5%;
 }
 
-.employee {
+.queue {
   margin-right: 5%;
 }
 
 .form-field {
   width: 100%;
-  margin-bottom: -15px;
+  margin-bottom: -20px;
 }
