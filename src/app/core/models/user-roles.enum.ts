@@ -1,4 +1,6 @@
 export enum UserRoles {
-  Employee = 'employee',
-  Admin = 'admin',
+  Doctor = 'doctor',
+  Nurse = 'nurse',
+  Paramedic = 'paramedic',
+  Receptionist = 'receptionist',
 }
