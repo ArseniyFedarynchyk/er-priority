@@ -49,7 +49,7 @@ export class LoginPageStore extends ComponentStore<LoginPageState> {
           .pipe(
             tapResponse({
               next: () => {
-                this.router.navigate(['/']);
+                this.router.navigate(['/patients']);
               },
               error: () => {
                 this.patchState({ error: 'Credentials are incorrect' });
