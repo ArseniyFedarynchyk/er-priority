@@ -20,7 +20,7 @@
     "status": 200,
     "jsonBody": {
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEiLCJSb2xlcyI6WyJBZG1pbiIsIlVzZXIiXSwiZXhwIjoxNjk2MTUxOTgyLCJpc3MiOiJEZW1vWm9uZUFwaSIsImF1ZCI6IkRlbW9ab25lQXBwIn0.LzuMGz3JrKYR9hUyqoiWKk0lEWEVC4hWy60FvQSZYnw",
-      "roles": ["employee"],
+      "roles": ["paramedic"],
       "expiryDate": 1694009201
     }
   }
