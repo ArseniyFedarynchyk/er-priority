@@ -1,0 +1,11 @@
+$toolbar-height: 90px;
+
+.container {
+  height: calc(100% - $toolbar-height);
+}
+
+.content {
+  height: 100%;
+  padding: 5px 10px;
+  overflow-y: auto;
+}
