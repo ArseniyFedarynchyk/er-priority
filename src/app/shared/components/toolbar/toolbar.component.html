@@ -6,14 +6,22 @@
   </form>
 
   <div class="user-section">
-    <div class="queue">
-      <p>Stanowisko:</p>
-      <p>Rejestracja</p>
+    <div class="user" *ngIf="(isHandset$ | async) === false">
+      <div class="queue">
+        <p>Stanowisko:</p>
+        <p>Rejestracja</p>
+      </div>
+      <div class="user-info">
+        <p>Zalogowany:</p>
+        <p>Arseniy Fedarynchyk</p>
+      </div>
     </div>
-    <div class="user-info">
-      <p>Zalogowany:</p>
-      <p>Arseniy Fedarynchyk</p>
-    </div>
+    <mat-icon
+      matTooltip="Zalogowany: Arseniy Fedarynchyk"
+      *ngIf="isHandset$ | async"
+      class="account_icon"
+      >account_circle</mat-icon
+    >
     <button
       mat-fab
       matTooltip="Wyloguj"
