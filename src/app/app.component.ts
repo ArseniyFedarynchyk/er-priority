@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { IsActiveMatchOptions, Router, RouterOutlet } from '@angular/router';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 @Component({
@@ -10,4 +10,16 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  get isLoginPageShown(): boolean {
+    const matchOptions: IsActiveMatchOptions = {
+      matrixParams: 'subset',
+      queryParams: 'ignored',
+      paths: 'exact',
+      fragment: 'ignored',
+    };
+    return this.router.isActive('/login', matchOptions);
+  }
+
+  constructor(private readonly router: Router) {}
+}

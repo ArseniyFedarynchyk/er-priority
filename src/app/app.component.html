@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container" *ngIf="!isLoginPageShown; else routerWithoutNavbar">
   <erp-toolbar />
   <div class="content">
     <router-outlet />
   </div>
 </div>
+<ng-template #routerWithoutNavbar>
+  <router-outlet />
+</ng-template>
