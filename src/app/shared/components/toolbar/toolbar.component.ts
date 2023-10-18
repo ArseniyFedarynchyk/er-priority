@@ -27,7 +27,7 @@ export class ToolbarComponent {
   constructor(private readonly breakpointObserver: BreakpointObserver) {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe('(max-width: 835px)')
+    .observe('(max-width: 860px)')
     .pipe(
       map(result => result.matches),
       shareReplay(),
