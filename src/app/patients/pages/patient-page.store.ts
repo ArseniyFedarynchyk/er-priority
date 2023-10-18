@@ -12,7 +12,7 @@ export interface PatientPageState {
 }
 
 @Injectable()
-export class DemoPageStore extends ComponentStore<PatientPageState> {
+export class PatientPageStore extends ComponentStore<PatientPageState> {
   private readonly patients$ = this.select(state => state.patients);
   private readonly isLoading$ = this.select(state => state.isLoading);
   private readonly error$ = this.select(state => state.error);
