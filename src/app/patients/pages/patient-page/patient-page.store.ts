@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { exhaustMap, tap } from 'rxjs';
-import { Patient } from '../models/patient.model';
-import { PatientApiService } from '../services/patient-api.service';
+import { Patient } from '../../models/patient.model';
+import { PatientApiService } from '../../services/patient-api.service';
 
 export interface PatientPageState {
   patients: Patient[];

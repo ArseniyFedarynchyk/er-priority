@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { PatientPageStore } from './patient-page.store';
 
 @Component({
   selector: 'erp-patient-page',
@@ -10,5 +11,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [CommonModule, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './patient-page.component.html',
   styleUrls: ['./patient-page.component.scss'],
+  providers: [PatientPageStore],
 })
-export class PatientPageComponent {}
+export class PatientPageComponent implements OnInit {
+  constructor(private readonly patientPageStore: PatientPageStore) {}
+
+  ngOnInit(): void {
+    this.patientPageStore.fetchPatients();
+  }
+}
