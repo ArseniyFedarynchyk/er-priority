@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgxRolesService } from 'ngx-permissions';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserData } from 'src/app/core/models/user.model';
 import { environment } from 'src/environments/environment';
@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private readonly apiUrl: string = environment.apiBaseUrl;
   private user: UserData | null = null;
+  private subscription?: Subscription;
   get isAuthenticated(): boolean {
     return !!this.user;
   }
@@ -39,6 +40,7 @@ export class AuthService {
 
   logout(): void {
     this.user = null;
+    this.subscription?.unsubscribe();
     this.ngxRolesService.flushRoles();
   }
 }
