@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
 import { PatientPageStore } from './patient-page.store';
+import { PatientAddComponent } from '../../components/patient-add/patient-add.component';
 
 @Component({
   selector: 'erp-patient-page',
@@ -15,6 +16,7 @@ import { PatientPageStore } from './patient-page.store';
     MatIconModule,
     MatTooltipModule,
     PatientListComponent,
+    PatientAddComponent,
   ],
   templateUrl: './patient-page.component.html',
   styleUrls: ['./patient-page.component.scss'],
