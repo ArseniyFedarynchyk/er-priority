@@ -1,0 +1,26 @@
+mat-mdc-header-cell {
+  background: red;
+}
+
+.header-row {
+  height: 30px;
+  font-size: 20px;
+  color: rgb(42, 125, 249);
+}
+
+.row {
+  height: 80px;
+  cursor: pointer;
+}
+
+.row:nth-child(odd) {
+  background-color: rgb(131, 234, 254);
+}
+
+.mat-mdc-header-cell {
+  text-align: center;
+}
+
+.mat-mdc-cell {
+  text-align: center;
+}
