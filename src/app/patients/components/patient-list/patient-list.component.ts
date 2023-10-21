@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 
-const ELEMENT_DATA = [
+const PATIENTS_DATA = [
   {
     position: 1,
     secondName: 'Sasin',
@@ -111,7 +111,7 @@ export class PatientListComponent {
     'time',
     'buttons',
   ];
-  dataSource = ELEMENT_DATA;
+  dataSource = PATIENTS_DATA;
 
   onClick(): void {
     console.log('Mat-card was clicked!');
