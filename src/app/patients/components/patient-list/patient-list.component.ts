@@ -116,4 +116,12 @@ export class PatientListComponent {
   onClick(): void {
     console.log('Mat-card was clicked!');
   }
+
+  onButtonDeleteClick(): void {
+    console.log('Button delete was clicked!');
+  }
+
+  onButtonEditClick(): void {
+    console.log('Button edit was clicked!');
+  }
 }
