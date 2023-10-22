@@ -7,3 +7,14 @@
   display: flex;
   gap: 10px;
 }
+
+.form-field {
+  width: 100%;
+}
+
+.dialog-action {
+  padding: 0 25px 20px;
+  .btn {
+    flex: 1;
+  }
+}
