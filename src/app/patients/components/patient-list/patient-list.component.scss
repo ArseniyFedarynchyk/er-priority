@@ -1,5 +1,5 @@
 .header-row {
-  height: 30px;
+  height: 50px;
   font-size: 20px;
   color: rgb(42, 125, 249);
 }
@@ -7,6 +7,9 @@
 .row {
   height: 80px;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(26, 72, 141);
 }
 
 .row:nth-child(odd) {

@@ -1,92 +1,10 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-
-const PATIENTS_DATA = [
-  {
-    position: 1,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 32,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 2,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 42,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 3,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 52,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 4,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 72,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 5,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 52,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 6,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 27,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 7,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 27,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 8,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 24,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 9,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 24,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-  {
-    position: 10,
-    secondName: 'Sasin',
-    firstName: 'Jakub',
-    age: 27,
-    pesel: 99999999999,
-    time: new Date(),
-  },
-];
+import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'erp-patient-list',
@@ -111,10 +29,10 @@ export class PatientListComponent {
     'time',
     'buttons',
   ];
-  dataSource = PATIENTS_DATA;
+  @Input({ required: true }) patientsArray!: Patient[];
 
   onClick(): void {
-    console.log('Mat-card was clicked!');
+    console.log('Patient tile was clicked!');
   }
 
   onButtonDeleteClick(): void {

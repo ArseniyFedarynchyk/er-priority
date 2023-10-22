@@ -1,0 +1,91 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/v1/patients"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "id": 1,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 32,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 2,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 42,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 3,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 52,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 4,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 72,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 5,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 52,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 6,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 27,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 7,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 27,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 8,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 24,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 9,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 24,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      },
+      {
+        "id": 10,
+        "secondName": "Sasin",
+        "firstName": "Jakub",
+        "age": 27,
+        "pesel": 99999999999,
+        "registrationTime": "Sun Oct 22 2023 11:08:20 GMT+0200 (czas środkowoeuropejski letni)"
+      }
+    ]
+  }
+}

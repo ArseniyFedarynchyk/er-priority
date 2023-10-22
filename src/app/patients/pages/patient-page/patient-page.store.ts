@@ -17,8 +17,8 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
   private readonly isLoading$ = this.select(state => state.isLoading);
   private readonly error$ = this.select(state => state.error);
   readonly vm$ = this.select({
-    isLoading: this.isLoading$,
     patients: this.patients$,
+    isLoading: this.isLoading$,
     error: this.error$,
   });
 
@@ -34,6 +34,7 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
           tapResponse({
             next: patientsArray => {
               this.patchState({ patients: patientsArray });
+              console.log(patientsArray);
             },
             error: (e: HttpErrorResponse) => {
               this.patchState({ error: e.message });
