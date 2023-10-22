@@ -1,3 +1,4 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
@@ -41,13 +42,22 @@ export class AddEditDialogComponent {
     secondName: [''],
     dateOfBirth: [''],
     pesel: ['', Validators.maxLength(11)],
+    sex: [''],
     registrationTime: [new Date().toString()],
   });
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly dialogRef: DialogRef<AddEditDialogComponent>,
+  ) {}
+
+  onClose(): void {
+    this.dialogRef.close();
+  }
 
   onSubmit(): void {
     console.log('Submit button was clicked!');
     console.log(this.form.getRawValue());
+    this.dialogRef.close();
   }
 }

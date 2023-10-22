@@ -36,13 +36,10 @@
     </mat-radio-group>
   </div>
   <div mat-dialog-actions class="dialog-action">
-    <button mat-raised-button class="btn" type="button">Anuluj</button
+    <button mat-raised-button (click)="onClose()" class="btn" type="button">
+      Anuluj</button
     ><button mat-raised-button class="btn" color="primary" type="submit">
       Zapisz
     </button>
-    <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
-    <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
-      Ok
-    </button> -->
   </div>
 </form>
