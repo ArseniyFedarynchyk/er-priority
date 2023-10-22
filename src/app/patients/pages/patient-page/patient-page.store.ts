@@ -34,7 +34,6 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
           tapResponse({
             next: patientsArray => {
               this.patchState({ patients: patientsArray });
-              console.log(patientsArray);
             },
             error: (e: HttpErrorResponse) => {
               this.patchState({ error: e.message });
