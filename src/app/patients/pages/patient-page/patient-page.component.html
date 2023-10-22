@@ -1,0 +1,11 @@
+<div class="patient-content" *ngIf="vm$ | async as vm">
+  <erp-patient-list [patientsArray]="vm.patients" />
+</div>
+<button
+  class="add-btn"
+  mat-fab
+  matTooltip="Dodaj pacjenta"
+  color="primary"
+  aria-label="Example icon button with a delete icon">
+  <mat-icon class="add-icon">add</mat-icon>
+</button>
