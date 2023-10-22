@@ -1,1 +1,36 @@
-<p>add-edit-dialog works!</p>
+<h1 mat-dialog-title>Rejestracja pacjenta</h1>
+<div mat-dialog-content>
+  <div class="dialog-row">
+    <mat-form-field>
+      <mat-label>Imię</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nazwisko</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <div class="dialog-row">
+    <mat-form-field>
+      <mat-label>PESEL</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Data urodzenia</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <div class="dialog-row"></div>
+  <mat-form-field>
+    <mat-label>Data urodzenia</mat-label>
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+  <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
+    Ok
+  </button> -->
+</div>
