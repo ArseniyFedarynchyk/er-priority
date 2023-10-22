@@ -28,7 +28,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
-    <mat-radio-group aria-label="Choose sex">
+    <mat-radio-group aria-label="Choose sex" [formControl]="form.controls.sex">
       <mat-label>Płeć</mat-label>
       <mat-radio-button value="female">Kobieta</mat-radio-button>
       <mat-radio-button value="male">Mężczyzna</mat-radio-button>
@@ -36,7 +36,7 @@
     </mat-radio-group>
   </div>
   <div mat-dialog-actions class="dialog-action">
-    <button mat-raised-button class="btn">Anuluj</button
+    <button mat-raised-button class="btn" type="button">Anuluj</button
     ><button mat-raised-button class="btn" color="primary" type="submit">
       Zapisz
     </button>
