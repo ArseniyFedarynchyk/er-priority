@@ -9,6 +9,5 @@ export const routes: Routes = [
   {
     path: 'patients',
     component: PatientPageComponent,
-    canActivate: [authGuard],
   },
 ];
