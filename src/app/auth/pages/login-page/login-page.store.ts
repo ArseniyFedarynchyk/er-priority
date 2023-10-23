@@ -52,7 +52,7 @@ export class LoginPageStore extends ComponentStore<LoginPageState> {
                 this.router.navigate(['/patients']);
               },
               error: () => {
-                this.patchState({ error: 'Credentials are incorrect' });
+                this.patchState({ error: 'Niepoprawny login lub hasło' });
               },
             }),
           ),

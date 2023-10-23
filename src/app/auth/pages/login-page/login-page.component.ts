@@ -48,7 +48,7 @@ export class LoginPageComponent {
   onSubmit(): void {
     if (this.authForm.invalid) {
       this.loginPageStore.patchState({
-        error: 'Credentials are incorrect',
+        error: 'Niepoprawny login lub hasło',
       });
       return;
     }
