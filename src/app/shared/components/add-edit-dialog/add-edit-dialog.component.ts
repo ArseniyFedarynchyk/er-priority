@@ -41,7 +41,7 @@ export class AddEditDialogComponent {
     firstName: [''],
     secondName: [''],
     dateOfBirth: [''],
-    pesel: ['', Validators.maxLength(11)],
+    pesel: ['', [Validators.minLength(11), Validators.maxLength(11)]],
     sex: [''],
     registrationTime: [new Date().toString()],
   });
