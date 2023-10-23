@@ -5,6 +5,7 @@ import { PatientPageComponent } from './patients/pages/patient-page/patient-page
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent, canActivate: [unAuthGuard] },
   {
     path: 'patients',
