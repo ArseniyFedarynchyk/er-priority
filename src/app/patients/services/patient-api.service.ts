@@ -13,4 +13,8 @@ export class PatientApiService {
   getAllPatients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(`${environment.apiBaseUrl}v1/patients`);
   }
+
+  removePatient(id: number): Observable<void> {
+    return this.http.delete<void>(`${environment.apiBaseUrl}v1/patients/${id}`);
+  }
 }
