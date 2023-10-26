@@ -37,13 +37,14 @@ import { MatRadioModule } from '@angular/material/radio';
   providers: [MatDatepickerModule],
 })
 export class AddEditDialogComponent {
+  readonly currentDate = new Date().toISOString();
   readonly form = this.fb.group({
     firstName: [''],
     secondName: [''],
     dateOfBirth: [''],
     pesel: ['', [Validators.minLength(11), Validators.maxLength(11)]],
     sex: [''],
-    registrationTime: [new Date().toString()],
+    registrationTime: [this.currentDate],
   });
 
   constructor(
