@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { Patient } from '../../models/patient.model';
+import { AgePipe } from '../../pipes/age.pipe';
 
 @Component({
   selector: 'erp-patient-list',
@@ -16,6 +17,7 @@ import { Patient } from '../../models/patient.model';
     DatePipe,
     MatButtonModule,
     MatIconModule,
+    AgePipe,
   ],
   templateUrl: './patient-list.component.html',
   styleUrls: ['./patient-list.component.scss'],

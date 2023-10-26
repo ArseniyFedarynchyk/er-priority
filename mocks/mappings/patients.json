@@ -10,7 +10,7 @@
         "id": 1,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 32,
+        "dateOfBirth": "2023-10-25T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -18,7 +18,7 @@
         "id": 2,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 42,
+        "dateOfBirth": "1950-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -26,7 +26,7 @@
         "id": 3,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 52,
+        "dateOfBirth": "1972-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -34,7 +34,7 @@
         "id": 4,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 72,
+        "dateOfBirth": "2005-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -42,7 +42,7 @@
         "id": 5,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 52,
+        "dateOfBirth": "2015-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -50,7 +50,7 @@
         "id": 6,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 27,
+        "dateOfBirth": "1986-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -58,7 +58,7 @@
         "id": 7,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 27,
+        "dateOfBirth": "1978-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -66,7 +66,7 @@
         "id": 8,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 24,
+        "dateOfBirth": "1960-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -74,7 +74,7 @@
         "id": 9,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 24,
+        "dateOfBirth": "1995-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       },
@@ -82,7 +82,7 @@
         "id": 10,
         "secondName": "Sasin",
         "firstName": "Jakub",
-        "age": 27,
+        "dateOfBirth": "2000-10-26T10:18:32.117Z",
         "pesel": 99999999999,
         "registrationTime": "2023-10-26T10:18:32.117Z"
       }

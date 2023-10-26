@@ -9,8 +9,9 @@ export class AgePipe implements PipeTransform {
     const currentDate = new Date();
     const dateOfBirth = new Date(dateOfBirthIso);
     let age = currentDate.getFullYear() - dateOfBirth.getFullYear();
+    const ageToString = age.toString();
     const month = currentDate.getMonth() - dateOfBirth.getMonth();
-    const day = currentDate.getDay() - dateOfBirth.getDay();
+
     if (
       month < 0 ||
       (month === 0 && currentDate.getDate() < dateOfBirth.getDate())
@@ -18,11 +19,16 @@ export class AgePipe implements PipeTransform {
       age--;
     }
 
-    if (age < 1) {
-      if (month >= 1) return `${month} mies.`;
-      if (month < 1) return `${day} dni`;
-      if (day === 1) return `${day} dzień`;
+    if (age === 1) return `${age} rok`;
+    if (age >= 12 && age <= 14) return `${age} lat`;
+    if (
+      ageToString[ageToString.length - 1] === '2' ||
+      ageToString[ageToString.length - 1] === '3' ||
+      ageToString[ageToString.length - 1] === '4'
+    ) {
+      return `${age} lata`;
     }
+
     return `${age} lat`;
   }
 }
