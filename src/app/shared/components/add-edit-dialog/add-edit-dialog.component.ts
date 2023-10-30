@@ -1,6 +1,6 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -10,7 +10,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -36,9 +36,9 @@ import { MatRadioModule } from '@angular/material/radio';
   styleUrls: ['./add-edit-dialog.component.scss'],
   providers: [MatDatepickerModule],
 })
-export class AddEditDialogComponent {
+export class AddEditDialogComponent implements OnInit {
   readonly currentDate = new Date().toISOString();
-  readonly form = this.fb.group({
+  readonly form = this.fb.nonNullable.group({
     firstName: [''],
     secondName: [''],
     dateOfBirth: [''],
@@ -50,7 +50,12 @@ export class AddEditDialogComponent {
   constructor(
     private readonly fb: FormBuilder,
     private readonly dialogRef: DialogRef<AddEditDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) private patient: any,
   ) {}
+
+  ngOnInit(): void {
+    this.form.patchValue(this.patient);
+  }
 
   onClose(): void {
     this.dialogRef.close();
