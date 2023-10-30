@@ -38,13 +38,11 @@ export class PatientListComponent {
     console.log('Patient tile was clicked!');
   }
 
-  onButtonDeleteClick(id: number): void {
-    console.log('Button delete was clicked!');
-    console.log(`This is your patients id: ${id}`);
+  onDelete(id: number): void {
     this.delete.emit(id);
   }
 
-  onButtonEditClick(): void {
+  onEdit(): void {
     console.log('Button edit was clicked!');
   }
 }
