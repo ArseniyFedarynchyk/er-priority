@@ -31,7 +31,7 @@
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let patient">
       <button
-        (click)="onEdit(); $event.stopPropagation()"
+        (click)="onEdit(patient); $event.stopPropagation()"
         mat-icon-button
         color="primary">
         <mat-icon>edit</mat-icon></button
