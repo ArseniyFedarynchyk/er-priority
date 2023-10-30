@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { Patient } from 'src/app/patients/models/patient.model';
 
 @Component({
   selector: 'erp-add-edit-dialog',
@@ -50,7 +51,7 @@ export class AddEditDialogComponent implements OnInit {
   constructor(
     private readonly fb: FormBuilder,
     private readonly dialogRef: DialogRef<AddEditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) private patient: any,
+    @Inject(MAT_DIALOG_DATA) private patient: Patient,
   ) {}
 
   ngOnInit(): void {
