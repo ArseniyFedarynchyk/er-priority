@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { exhaustMap, tap } from 'rxjs';
+import { Observable, exhaustMap, tap } from 'rxjs';
 import { Patient } from '../../models/patient.model';
 import { PatientApiService } from '../../services/patient-api.service';
 
@@ -44,4 +44,14 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
       }),
     );
   });
+
+  readonly removePatient = this.effect<number>(
+    ($source: Observable<number>) => {
+      return $source.pipe(
+        exhaustMap(id => {
+          return this.patientApiService.removePatient(id);
+        }),
+      );
+    },
+  );
 }

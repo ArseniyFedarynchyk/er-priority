@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "DELETE",
-    "url": "/v1/patients"
+    "urlPattern": "/v1/patients/([0-9]+)"
   },
   "response": {
     "status": 204,

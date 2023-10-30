@@ -36,7 +36,7 @@
         color="primary">
         <mat-icon>edit</mat-icon></button
       ><button
-        (click)="onButtonDeleteClick(); $event.stopPropagation()"
+        (click)="onButtonDeleteClick(patient.id); $event.stopPropagation()"
         mat-icon-button
         color="warn">
         <mat-icon>delete</mat-icon>

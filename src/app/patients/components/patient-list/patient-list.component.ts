@@ -1,5 +1,5 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,13 +32,16 @@ export class PatientListComponent {
     'buttons',
   ];
   @Input({ required: true }) patientsArray!: Patient[];
+  @Output() delete = new EventEmitter<number>();
 
   onClick(): void {
     console.log('Patient tile was clicked!');
   }
 
-  onButtonDeleteClick(): void {
+  onButtonDeleteClick(id: number): void {
     console.log('Button delete was clicked!');
+    console.log(`This is your patients id: ${id}`);
+    this.delete.emit(id);
   }
 
   onButtonEditClick(): void {

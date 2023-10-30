@@ -1,5 +1,5 @@
 <div class="patient-content" *ngIf="vm$ | async as vm">
-  <erp-patient-list [patientsArray]="vm.patients" />
+  <erp-patient-list (delete)="onDelete($event)" [patientsArray]="vm.patients" />
 </div>
 <button
   class="add-btn"
