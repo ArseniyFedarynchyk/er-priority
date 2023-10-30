@@ -5,4 +5,5 @@ export interface Patient {
   pesel: number;
   dateOfBirth: Date;
   registrationTime: Date;
+  sex: string;
 }
