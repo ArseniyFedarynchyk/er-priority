@@ -17,4 +17,8 @@ export class PatientApiService {
   removePatient(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.apiBaseUrl}v1/patients/${id}`);
   }
+
+  updatePatient(patient: Patient): Observable<void> {
+    return this.http.put<void>(`${environment.apiBaseUrl}v1/patients`, patient);
+  }
 }

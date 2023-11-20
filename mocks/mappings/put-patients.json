@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/v1/patients"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": { "message": "PUT request succeed!" }
+  }
+}

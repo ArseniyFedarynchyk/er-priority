@@ -48,6 +48,8 @@ export class PatientListComponent {
 
   onEdit(patient: Patient): void {
     console.log(patient);
-    this.matDialog.open(AddEditDialogComponent, { data: patient });
+    this.matDialog.open(AddEditDialogComponent, {
+      data: patient,
+    });
   }
 }

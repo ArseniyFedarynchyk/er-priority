@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { Patient } from 'src/app/patients/models/patient.model';
+import { PatientApiService } from 'src/app/patients/services/patient-api.service';
 
 @Component({
   selector: 'erp-add-edit-dialog',
@@ -50,8 +51,9 @@ export class AddEditDialogComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly dialogRef: DialogRef<AddEditDialogComponent>,
+    private readonly dialogRef: DialogRef<AddEditDialogComponent, Patient>,
     @Inject(MAT_DIALOG_DATA) private patient: Patient,
+    private readonly patientApiService: PatientApiService,
   ) {}
 
   ngOnInit(): void {
@@ -63,8 +65,12 @@ export class AddEditDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Submit button was clicked!');
-    console.log(this.form.getRawValue());
-    this.dialogRef.close();
+    const patientFormValue = this.form.getRawValue();
+    this.patientApiService
+      .updatePatient({
+        id: this.patient.id,
+        ...patientFormValue,
+      })
+      .subscribe(() => this.dialogRef.close());
   }
 }
