@@ -5,7 +5,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AddEditDialogComponent } from '../../components/add-edit-dialog/add-edit-dialog.component';
+import { PatientAddEditDialogComponent } from '../../components/patient-add-edit-dialog/patient-add-edit-dialog.component';
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
 import { PatientPageStore } from './patient-page.store';
 
@@ -19,7 +19,7 @@ import { PatientPageStore } from './patient-page.store';
     MatTooltipModule,
     PatientListComponent,
     MatDialogModule,
-    AddEditDialogComponent,
+    PatientAddEditDialogComponent,
     MatNativeDateModule,
   ],
   templateUrl: './patient-page.component.html',
@@ -39,7 +39,7 @@ export class PatientPageComponent implements OnInit {
   }
 
   openDialog(): void {
-    this.matDialog.open(AddEditDialogComponent);
+    this.matDialog.open(PatientAddEditDialogComponent);
   }
 
   onDelete(id: number): void {

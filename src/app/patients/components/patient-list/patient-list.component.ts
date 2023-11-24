@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { Patient } from '../../models/patient.model';
 import { AgePipe } from '../../pipes/age.pipe';
-import { AddEditDialogComponent } from '../add-edit-dialog/add-edit-dialog.component';
+import { PatientAddEditDialogComponent } from '../patient-add-edit-dialog/patient-add-edit-dialog.component';
 
 @Component({
   selector: 'erp-patient-list',
@@ -47,8 +47,7 @@ export class PatientListComponent {
   }
 
   onEdit(patient: Patient): void {
-    console.log(patient);
-    this.matDialog.open(AddEditDialogComponent, {
+    this.matDialog.open(PatientAddEditDialogComponent, {
       data: patient,
     });
   }

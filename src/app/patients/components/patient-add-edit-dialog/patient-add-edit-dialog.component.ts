@@ -19,7 +19,7 @@ import { Patient } from 'src/app/patients/models/patient.model';
 import { PatientApiService } from 'src/app/patients/services/patient-api.service';
 
 @Component({
-  selector: 'erp-add-edit-dialog',
+  selector: 'erp-patient-add-edit-dialog',
   standalone: true,
   imports: [
     CommonModule,
@@ -34,11 +34,11 @@ import { PatientApiService } from 'src/app/patients/services/patient-api.service
     ReactiveFormsModule,
     FormsModule,
   ],
-  templateUrl: './add-edit-dialog.component.html',
-  styleUrls: ['./add-edit-dialog.component.scss'],
+  templateUrl: './patient-add-edit-dialog.component.html',
+  styleUrls: ['./patient-add-edit-dialog.component.scss'],
   providers: [MatDatepickerModule],
 })
-export class AddEditDialogComponent implements OnInit {
+export class PatientAddEditDialogComponent implements OnInit {
   readonly currentDate = new Date().toISOString();
   readonly form = this.fb.nonNullable.group({
     firstName: [''],
@@ -51,7 +51,10 @@ export class AddEditDialogComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly dialogRef: DialogRef<AddEditDialogComponent, Patient>,
+    private readonly dialogRef: DialogRef<
+      PatientAddEditDialogComponent,
+      Patient
+    >,
     @Inject(MAT_DIALOG_DATA) private patient: Patient,
     private readonly patientApiService: PatientApiService,
   ) {}
