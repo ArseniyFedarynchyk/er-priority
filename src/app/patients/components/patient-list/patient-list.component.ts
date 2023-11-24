@@ -5,9 +5,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { AddEditDialogComponent } from 'src/app/shared/components/add-edit-dialog/add-edit-dialog.component';
 import { Patient } from '../../models/patient.model';
 import { AgePipe } from '../../pipes/age.pipe';
+import { AddEditDialogComponent } from '../add-edit-dialog/add-edit-dialog.component';
 
 @Component({
   selector: 'erp-patient-list',

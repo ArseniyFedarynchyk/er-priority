@@ -66,11 +66,13 @@ export class AddEditDialogComponent implements OnInit {
 
   onSubmit(): void {
     const patientFormValue = this.form.getRawValue();
-    this.patientApiService
-      .updatePatient({
-        id: this.patient.id,
-        ...patientFormValue,
-      })
-      .subscribe(() => this.dialogRef.close());
+    if (this.patient) {
+      this.patientApiService
+        .updatePatient({
+          id: this.patient.id,
+          ...patientFormValue,
+        })
+        .subscribe(() => this.dialogRef.close());
+    }
   }
 }
