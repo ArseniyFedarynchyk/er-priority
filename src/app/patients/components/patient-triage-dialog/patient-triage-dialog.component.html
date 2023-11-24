@@ -1,1 +1,83 @@
-<p>patient-triage-dialog works!</p>
+<mat-toolbar class="triage-toolbar" color="primary">
+  <h2>Karta segregacji medycznej</h2>
+  <div class="dialog-action">
+    <button
+      mat-raised-button
+      class="btn btn-close"
+      type="button"
+      (click)="onClose()">
+      Anuluj</button
+    ><button
+      mat-raised-button
+      class="btn btn-accept"
+      color="accent"
+      type="submit">
+      Zapisz
+    </button>
+  </div>
+</mat-toolbar>
+<div class="patient-info"></div>
+<form>
+  <div class="triage-content">
+    <div class="triage-box triage-sample">
+      <div class="triage-box-title">
+        <h3>Wywiad</h3>
+      </div>
+      <div class="triage-box-content">
+        <div class="dialog-row">
+          <mat-form-field class="form-field">
+            <mat-label>Objawy</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <div class="dialog-row">
+          <mat-form-field class="form-field">
+            <mat-label>Alergie</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <div class="dialog-row">
+          <mat-form-field class="form-field">
+            <mat-label>Leki</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <div class="dialog-row">
+          <mat-form-field class="form-field">
+            <mat-label>Choroby przewlekłe</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <div class="dialog-row">
+          <mat-form-field class="form-field">
+            <mat-label>Okoliczności zdarzenia</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="triage-box traige-vital-parameters">
+      <div class="triage-box-title">
+        <h3>Parametry życiowe</h3>
+      </div>
+      <div class="blood-pressure">
+        <mat-form-field class="form-field">
+          <mat-label>Ciśnienie skurczowe</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Ciśnienie rozkurczowe</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="form-field">
+        <mat-label>Temperatura</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>SpO2</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
+  </div>
+</form>

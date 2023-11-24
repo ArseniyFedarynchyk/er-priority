@@ -35,11 +35,12 @@ export class PatientListComponent {
   ];
   @Input({ required: true }) patientsArray!: Patient[];
   @Output() delete = new EventEmitter<number>();
+  @Output() patientTriageDialogOpen = new EventEmitter<Patient>();
 
   constructor(private readonly matDialog: MatDialog) {}
 
-  onClick(): void {
-    console.log('Patient tile was clicked!');
+  onClick(patient: Patient): void {
+    this.patientTriageDialogOpen.emit(patient);
   }
 
   onDelete(id: number): void {

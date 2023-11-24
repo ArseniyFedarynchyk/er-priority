@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PatientAddEditDialogComponent } from '../../components/patient-add-edit-dialog/patient-add-edit-dialog.component';
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
+import { PatientTriageDialogComponent } from '../../components/patient-triage-dialog/patient-triage-dialog.component';
 import { PatientPageStore } from './patient-page.store';
 
 @Component({
@@ -21,6 +22,7 @@ import { PatientPageStore } from './patient-page.store';
     MatDialogModule,
     PatientAddEditDialogComponent,
     MatNativeDateModule,
+    PatientTriageDialogComponent,
   ],
   templateUrl: './patient-page.component.html',
   styleUrls: ['./patient-page.component.scss'],
@@ -28,6 +30,7 @@ import { PatientPageStore } from './patient-page.store';
 })
 export class PatientPageComponent implements OnInit {
   readonly vm$ = this.patientPageStore.vm$;
+  patientTriageDialogIsOpen = false;
 
   constructor(
     private readonly patientPageStore: PatientPageStore,
@@ -44,5 +47,9 @@ export class PatientPageComponent implements OnInit {
 
   onDelete(id: number): void {
     this.patientPageStore.removePatient(id);
+  }
+
+  togglePatientDialog() {
+    this.patientTriageDialogIsOpen = !this.patientTriageDialogIsOpen;
   }
 }
