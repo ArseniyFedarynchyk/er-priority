@@ -49,7 +49,7 @@ export class PatientPageComponent implements OnInit {
     this.patientPageStore.removePatient(id);
   }
 
-  togglePatientDialog() {
+  togglePatientDialog(): void {
     this.patientTriageDialogIsOpen = !this.patientTriageDialogIsOpen;
   }
 }
