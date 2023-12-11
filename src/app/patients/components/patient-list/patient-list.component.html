@@ -48,7 +48,7 @@
     class="header-row"
     *matHeaderRowDef="displayedColumns; sticky: true"></tr>
   <tr
-    (click)="onClick(row)"
+    (click)="onPatientTileClick(row)"
     class="row"
     mat-row
     *matRowDef="let row; columns: displayedColumns"></tr>

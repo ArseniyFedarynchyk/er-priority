@@ -16,7 +16,18 @@
     </button>
   </div>
 </mat-toolbar>
-<div class="patient-info"></div>
+<div class="patient-info">
+  <div class="patient-info-title">
+    <mat-icon>person</mat-icon>
+    <h3>Pacjent</h3>
+  </div>
+  <p>Imię: {{ patient.firstName }}</p>
+  <p>Nazwisko: {{ patient.secondName }}</p>
+  <p>Data urodzenia: {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}</p>
+  <p>Wiek: {{ patient.dateOfBirth | age }}</p>
+  <p>PESEL: {{ patient.pesel }}</p>
+  <p>Płeć: {{ patient.sex }}</p>
+</div>
 <form>
   <div class="triage-content">
     <div class="triage-box triage-sample">

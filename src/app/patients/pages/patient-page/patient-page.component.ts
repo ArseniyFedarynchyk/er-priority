@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { PatientAddEditDialogComponent } from '../../components/patient-add-edit-dialog/patient-add-edit-dialog.component';
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
 import { PatientTriageDialogComponent } from '../../components/patient-triage-dialog/patient-triage-dialog.component';
+import { Patient } from '../../models/patient.model';
 import { PatientPageStore } from './patient-page.store';
 
 @Component({
@@ -31,6 +32,7 @@ import { PatientPageStore } from './patient-page.store';
 export class PatientPageComponent implements OnInit {
   readonly vm$ = this.patientPageStore.vm$;
   patientTriageDialogIsOpen = false;
+  patient!: Patient;
 
   constructor(
     private readonly patientPageStore: PatientPageStore,
@@ -49,7 +51,8 @@ export class PatientPageComponent implements OnInit {
     this.patientPageStore.removePatient(id);
   }
 
-  togglePatientDialog(): void {
+  togglePatientDialog(patient: Patient): void {
     this.patientTriageDialogIsOpen = !this.patientTriageDialogIsOpen;
+    this.patient = patient;
   }
 }

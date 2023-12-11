@@ -1,11 +1,14 @@
 <div class="patient-content" *ngIf="vm$ | async as vm">
   <erp-patient-list
-    (patientTriageDialogOpen)="togglePatientDialog()"
+    (patientTriageDialogOpen)="togglePatientDialog($event)"
     (delete)="onDelete($event)"
     [patientsArray]="vm.patients" />
-  <erp-patient-triage-dialog
+  <!-- <erp-patient-triage-dialog
     (closePatientDialog)="togglePatientDialog()"
-    *ngIf="patientTriageDialogIsOpen" />
+    *ngIf="patientTriageDialogIsOpen" /> -->
+  <erp-patient-triage-dialog
+    *ngIf="patientTriageDialogIsOpen"
+    [patient]="patient" />
 </div>
 <button
   class="add-btn"

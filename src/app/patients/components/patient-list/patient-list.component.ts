@@ -39,7 +39,7 @@ export class PatientListComponent {
 
   constructor(private readonly matDialog: MatDialog) {}
 
-  onClick(patient: Patient): void {
+  onPatientTileClick(patient: Patient): void {
     this.patientTriageDialogOpen.emit(patient);
   }
 
