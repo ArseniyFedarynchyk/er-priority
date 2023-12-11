@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Patient } from '../../models/patient.model';
 import { AgePipe } from '../../pipes/age.pipe';
+import { SexPipe } from '../../pipes/sex.pipe';
 
 @Component({
   selector: 'erp-patient-triage-dialog',
@@ -23,6 +24,7 @@ import { AgePipe } from '../../pipes/age.pipe';
     DatePipe,
     AgePipe,
     MatIconModule,
+    SexPipe,
   ],
   templateUrl: './patient-triage-dialog.component.html',
   styleUrls: ['./patient-triage-dialog.component.scss'],

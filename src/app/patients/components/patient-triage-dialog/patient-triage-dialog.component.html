@@ -26,7 +26,7 @@
   <p>Data urodzenia: {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}</p>
   <p>Wiek: {{ patient.dateOfBirth | age }}</p>
   <p>PESEL: {{ patient.pesel }}</p>
-  <p>Płeć: {{ patient.sex }}</p>
+  <p>Płeć: {{ patient.sex | sex }}</p>
 </div>
 <form>
   <div class="triage-content">
