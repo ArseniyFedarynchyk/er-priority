@@ -21,7 +21,10 @@
 }
 
 .patient-info {
-  margin: 10px 10px;
+  margin: 10px 10px 0;
+  p {
+    margin: 0;
+  }
 }
 
 .patient-info-title {
@@ -36,6 +39,12 @@
     margin: 0;
     font-size: 24px;
   }
+}
+
+.patient-info-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .triage-sample {
@@ -79,4 +88,9 @@
 
 .btn-close {
   margin-right: 10px;
+}
+
+.bold-font {
+  font-style: bold;
+  font-weight: 600;
 }

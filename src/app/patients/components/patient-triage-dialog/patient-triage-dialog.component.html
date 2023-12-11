@@ -21,12 +21,25 @@
     <mat-icon>person</mat-icon>
     <h3>Pacjent</h3>
   </div>
-  <p>Imię: {{ patient.firstName }}</p>
-  <p>Nazwisko: {{ patient.secondName }}</p>
-  <p>Data urodzenia: {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}</p>
-  <p>Wiek: {{ patient.dateOfBirth | age }}</p>
-  <p>PESEL: {{ patient.pesel }}</p>
-  <p>Płeć: {{ patient.sex | sex }}</p>
+  <div class="patient-info-content">
+    <div class="patient-item">
+      <p><span class="bold-font">Imię:</span> {{ patient.firstName }}</p>
+      <p><span class="bold-font">Nazwisko:</span> {{ patient.secondName }}</p>
+    </div>
+    <div class="patient-item">
+      <p>
+        <span class="bold-font">Data urodzenia:</span>
+        {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}
+      </p>
+      <p>
+        <span class="bold-font">Wiek:</span> {{ patient.dateOfBirth | age }}
+      </p>
+    </div>
+    <div class="patient-item">
+      <p><span class="bold-font">PESEL:</span> {{ patient.pesel }}</p>
+      <p><span class="bold-font">Płeć:</span> {{ patient.sex | sex }}</p>
+    </div>
+  </div>
 </div>
 <form>
   <div class="triage-content">
