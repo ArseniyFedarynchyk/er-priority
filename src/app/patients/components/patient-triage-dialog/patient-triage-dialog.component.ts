@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Patient } from '../../models/patient.model';
 import { AgePipe } from '../../pipes/age.pipe';
@@ -27,6 +28,7 @@ import { SexPipe } from '../../pipes/sex.pipe';
     MatIconModule,
     SexPipe,
     MatButtonToggleModule,
+    MatSelectModule,
   ],
   templateUrl: './patient-triage-dialog.component.html',
   styleUrls: ['./patient-triage-dialog.component.scss'],
@@ -34,6 +36,16 @@ import { SexPipe } from '../../pipes/sex.pipe';
 export class PatientTriageDialogComponent {
   @Output() closePatientDialog = new EventEmitter<void>();
   @Input({ required: true }) patient!: Patient;
+  readonly consciousnessArr: string[] = [
+    'A (Alert) – przytomny, skupia uwagę',
+    'V (Verbal) – reaguje na polecenia głosowe',
+    'P (Pain) – reaguje na bodźce bólowe',
+    'U (Unresponsive) – nieprzytomny, nie reaguje na żadne bodźce.',
+  ];
+  readonly painLevels: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  readonly oxygenLevels: number[] = [
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+  ];
 
   onClose(): void {
     this.closePatientDialog.emit();

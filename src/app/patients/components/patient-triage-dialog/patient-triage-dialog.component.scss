@@ -76,6 +76,16 @@
   padding: 10px;
 }
 
+.blood-pressure {
+  min-width: 160px;
+  width: 40%;
+}
+
+.slash {
+  font-size: 50px;
+  line-height: 50px;
+}
+
 .dialog-row {
   display: flex;
   gap: 10px;
@@ -84,6 +94,11 @@
 .form-field {
   width: 100%;
   margin-bottom: -1em;
+}
+
+.mat-input {
+  text-align: center;
+  // font-size: 30px;
 }
 
 .btn-close {
