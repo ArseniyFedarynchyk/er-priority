@@ -100,49 +100,56 @@
 }
 
 .button-toggle-group {
+  box-shadow: none;
   border: none;
   gap: 5px;
   padding: 0;
   width: 100%;
 }
 
+.mat-button-toggle-standalone:not([class*='mat-elevation-z']),
+.mat-button-toggle-group:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
 .button-toggle {
   flex: 1;
   font-weight: 600;
+  color: black;
+  border: 3px solid;
 }
 
 .button-toggle:nth-child(1) {
-  border: 3px solid rgb(193, 32, 32);
+  border-color: rgb(255, 0, 0);
   &.mat-button-toggle-checked {
-    background-color: red;
+    background-color: rgb(255, 0, 0);
   }
 }
 
 .button-toggle:nth-child(2) {
-  border: 3px solid rgb(198, 123, 19);
-  border-left: black;
+  border-color: rgb(255, 149, 0);
   &.mat-button-toggle-checked {
-    background-color: orange;
+    background-color: rgb(255, 149, 0);
   }
 }
 
 .button-toggle:nth-child(3) {
-  border: 3px solid rgb(163, 202, 7);
+  border-color: rgb(242, 255, 0);
   &.mat-button-toggle-checked {
-    background-color: yellow;
+    background-color: rgb(242, 255, 0);
   }
 }
 
 .button-toggle:nth-child(4) {
-  border: 3px solid rgb(0, 185, 0);
+  border-color: rgb(0, 185, 0);
   &.mat-button-toggle-checked {
-    background-color: green;
+    background-color: rgb(0, 185, 0);
   }
 }
 
 .button-toggle:nth-child(5) {
-  border: 3px solid rgb(23, 36, 177);
+  border-color: rgb(23, 36, 177);
   &.mat-button-toggle-checked {
-    background-color: rgb(63, 49, 248);
+    background-color: rgb(23, 36, 177);
   }
 }
