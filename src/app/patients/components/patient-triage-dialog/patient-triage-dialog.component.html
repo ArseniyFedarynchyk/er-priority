@@ -41,7 +41,7 @@
     </div>
   </div>
 </div>
-<form>
+<form (submit)="onSubmit()">
   <div class="triage-content">
     <div class="triage-box triage-sample">
       <div class="triage-box-title">
@@ -51,31 +51,41 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Objawy</mat-label>
-            <input matInput />
+            <input
+              matInput
+              [formControl]="patientTriageForm.controls.symptoms" />
           </mat-form-field>
         </div>
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Alergie</mat-label>
-            <input matInput />
+            <input
+              matInput
+              [formControl]="patientTriageForm.controls.allergies" />
           </mat-form-field>
         </div>
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Leki</mat-label>
-            <input matInput />
+            <input
+              matInput
+              [formControl]="patientTriageForm.controls.medicine" />
           </mat-form-field>
         </div>
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Choroby przewlekłe</mat-label>
-            <input matInput />
+            <input
+              matInput
+              [formControl]="patientTriageForm.controls.chronicDiseases" />
           </mat-form-field>
         </div>
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Okoliczności zdarzenia</mat-label>
-            <input matInput />
+            <input
+              matInput
+              [formControl]="patientTriageForm.controls.circumstances" />
           </mat-form-field>
         </div>
       </div>
@@ -88,26 +98,45 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>sBP</mat-label>
-            <input class="mat-input" matInput />
+            <input
+              class="mat-input"
+              matInput
+              [formControl]="
+                patientTriageForm.controls.sistolicBloodPressure
+              " />
           </mat-form-field>
           <span class="slash">/</span>
           <mat-form-field class="form-field">
             <mat-label>dBP</mat-label>
-            <input class="mat-input" matInput />
+            <input
+              class="mat-input"
+              matInput
+              [formControl]="
+                patientTriageForm.controls.diastolicBloodPressure
+              " />
           </mat-form-field>
         </div>
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Tętno</mat-label>
-            <input class="mat-input" matInput />
+            <input
+              class="mat-input"
+              matInput
+              [formControl]="patientTriageForm.controls.puls" />
           </mat-form-field>
           <mat-form-field class="form-field">
             <mat-label>Temperatura</mat-label>
-            <input class="mat-input" matInput />
+            <input
+              class="mat-input"
+              matInput
+              [formControl]="patientTriageForm.controls.temperature" />
           </mat-form-field>
           <mat-form-field class="form-field">
             <mat-label>SpO2</mat-label>
-            <input class="mat-input" matInput />
+            <input
+              class="mat-input"
+              matInput
+              [formControl]="patientTriageForm.controls.saturation" />
           </mat-form-field>
         </div>
         <div class="dialog-row">
@@ -117,6 +146,7 @@
               <mat-option
                 *ngFor="let oxygenLevel of oxygenLevels"
                 [value]="oxygenLevel"
+                [formControl]="patientTriageForm.controls.oxygenTherapy"
                 >{{ oxygenLevel }}</mat-option
               >
             </mat-select>
@@ -129,6 +159,7 @@
               <mat-option
                 *ngFor="let consciousness of consciousnessArr"
                 [value]="consciousness"
+                [formControl]="patientTriageForm.controls.consciousness"
                 >{{ consciousness }}</mat-option
               >
             </mat-select>
@@ -141,6 +172,7 @@
               <mat-option
                 *ngFor="let painLevel of painLevels"
                 [value]="painLevel"
+                [formControl]="patientTriageForm.controls.painIntensity"
                 >{{ painLevel }}</mat-option
               >
             </mat-select>
