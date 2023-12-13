@@ -68,6 +68,7 @@ export class PatientTriageDialogComponent {
     oxygenTherapy: [''],
     consciousness: [''],
     painIntensity: [''],
+    priority: [''],
   });
 
   constructor(private readonly fb: FormBuilder) {}
@@ -77,6 +78,6 @@ export class PatientTriageDialogComponent {
   }
 
   onSubmit(): void {
-    console.log('Submit button was clicked!');
+    console.log(this.patientTriageForm.getRawValue());
   }
 }

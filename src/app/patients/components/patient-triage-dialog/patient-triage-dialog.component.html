@@ -1,47 +1,47 @@
-<mat-toolbar class="triage-toolbar" color="primary">
-  <h2>Karta segregacji medycznej</h2>
-  <div class="dialog-action">
-    <button
-      mat-raised-button
-      class="btn btn-close"
-      type="button"
-      (click)="onClose()">
-      Anuluj</button
-    ><button
-      mat-raised-button
-      class="btn btn-accept"
-      color="accent"
-      type="submit">
-      Zapisz
-    </button>
-  </div>
-</mat-toolbar>
-<div class="patient-info">
-  <div class="patient-info-title">
-    <mat-icon>person</mat-icon>
-    <h3>Pacjent</h3>
-  </div>
-  <div class="patient-info-content">
-    <div class="patient-item">
-      <p><span class="bold-font">Imię:</span> {{ patient.firstName }}</p>
-      <p><span class="bold-font">Nazwisko:</span> {{ patient.secondName }}</p>
+<form [formGroup]="patientTriageForm" (submit)="onSubmit()">
+  <mat-toolbar class="triage-toolbar" color="primary">
+    <h2>Karta segregacji medycznej</h2>
+    <div class="dialog-action">
+      <button
+        mat-raised-button
+        class="btn btn-close"
+        type="button"
+        (click)="onClose()">
+        Anuluj</button
+      ><button
+        mat-raised-button
+        class="btn btn-accept"
+        color="accent"
+        type="submit">
+        Zapisz
+      </button>
     </div>
-    <div class="patient-item">
-      <p>
-        <span class="bold-font">Data urodzenia:</span>
-        {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}
-      </p>
-      <p>
-        <span class="bold-font">Wiek:</span> {{ patient.dateOfBirth | age }}
-      </p>
+  </mat-toolbar>
+  <div class="patient-info">
+    <div class="patient-info-title">
+      <mat-icon>person</mat-icon>
+      <h3>Pacjent</h3>
     </div>
-    <div class="patient-item">
-      <p><span class="bold-font">PESEL:</span> {{ patient.pesel }}</p>
-      <p><span class="bold-font">Płeć:</span> {{ patient.sex | sex }}</p>
+    <div class="patient-info-content">
+      <div class="patient-item">
+        <p><span class="bold-font">Imię:</span> {{ patient.firstName }}</p>
+        <p><span class="bold-font">Nazwisko:</span> {{ patient.secondName }}</p>
+      </div>
+      <div class="patient-item">
+        <p>
+          <span class="bold-font">Data urodzenia:</span>
+          {{ patient.dateOfBirth | date: 'dd.mm.yyyy' }}
+        </p>
+        <p>
+          <span class="bold-font">Wiek:</span> {{ patient.dateOfBirth | age }}
+        </p>
+      </div>
+      <div class="patient-item">
+        <p><span class="bold-font">PESEL:</span> {{ patient.pesel }}</p>
+        <p><span class="bold-font">Płeć:</span> {{ patient.sex | sex }}</p>
+      </div>
     </div>
   </div>
-</div>
-<form (submit)="onSubmit()">
   <div class="triage-content">
     <div class="triage-box triage-sample">
       <div class="triage-box-title">
@@ -142,11 +142,10 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Tlenoterapia</mat-label>
-            <mat-select>
+            <mat-select [formControl]="patientTriageForm.controls.saturation">
               <mat-option
                 *ngFor="let oxygenLevel of oxygenLevels"
                 [value]="oxygenLevel"
-                [formControl]="patientTriageForm.controls.oxygenTherapy"
                 >{{ oxygenLevel }}</mat-option
               >
             </mat-select>
@@ -155,11 +154,11 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Świadomość</mat-label>
-            <mat-select>
+            <mat-select
+              [formControl]="patientTriageForm.controls.consciousness">
               <mat-option
                 *ngFor="let consciousness of consciousnessArr"
                 [value]="consciousness"
-                [formControl]="patientTriageForm.controls.consciousness"
                 >{{ consciousness }}</mat-option
               >
             </mat-select>
@@ -168,11 +167,11 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Natężenie bólu</mat-label>
-            <mat-select>
+            <mat-select
+              [formControl]="patientTriageForm.controls.painIntensity">
               <mat-option
                 *ngFor="let painLevel of painLevels"
                 [value]="painLevel"
-                [formControl]="patientTriageForm.controls.painIntensity"
                 >{{ painLevel }}</mat-option
               >
             </mat-select>
@@ -181,23 +180,26 @@
       </div>
     </div>
   </div>
+  <div class="triage-actions">
+    <mat-button-toggle-group
+      class="button-toggle-group"
+      appearance="legacy"
+      [formControl]="patientTriageForm.controls.priority">
+      <mat-button-toggle class="button-toggle" value="esi 1"
+        >ESI 1</mat-button-toggle
+      >
+      <mat-button-toggle class="button-toggle" value="esi 2"
+        >ESI 2</mat-button-toggle
+      >
+      <mat-button-toggle class="button-toggle" value="esi 3"
+        >ESI 3</mat-button-toggle
+      >
+      <mat-button-toggle class="button-toggle" value="esi 4"
+        >ESI 4</mat-button-toggle
+      >
+      <mat-button-toggle class="button-toggle" value="esi 5"
+        >ESI 5</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+  </div>
 </form>
-<div class="triage-actions">
-  <mat-button-toggle-group class="button-toggle-group" appearance="legacy">
-    <mat-button-toggle class="button-toggle" value="esi 1"
-      >ESI 1</mat-button-toggle
-    >
-    <mat-button-toggle class="button-toggle" value="esi 2"
-      >ESI 2</mat-button-toggle
-    >
-    <mat-button-toggle class="button-toggle" value="esi 3"
-      >ESI 3</mat-button-toggle
-    >
-    <mat-button-toggle class="button-toggle" value="esi 4"
-      >ESI 4</mat-button-toggle
-    >
-    <mat-button-toggle class="button-toggle" value="esi 5"
-      >ESI 5</mat-button-toggle
-    >
-  </mat-button-toggle-group>
-</div>
