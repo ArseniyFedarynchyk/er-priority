@@ -1,6 +1,7 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +26,7 @@ import { SexPipe } from '../../pipes/sex.pipe';
     AgePipe,
     MatIconModule,
     SexPipe,
+    MatButtonToggleModule,
   ],
   templateUrl: './patient-triage-dialog.component.html',
   styleUrls: ['./patient-triage-dialog.component.scss'],

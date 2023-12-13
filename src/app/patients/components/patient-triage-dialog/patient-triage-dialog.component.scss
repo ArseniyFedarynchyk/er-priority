@@ -94,3 +94,55 @@
   font-style: bold;
   font-weight: 600;
 }
+
+.triage-actions {
+  margin: 10px;
+}
+
+.button-toggle-group {
+  border: none;
+  gap: 5px;
+  padding: 0;
+  width: 100%;
+}
+
+.button-toggle {
+  flex: 1;
+  font-weight: 600;
+}
+
+.button-toggle:nth-child(1) {
+  border: 3px solid rgb(193, 32, 32);
+  &.mat-button-toggle-checked {
+    background-color: red;
+  }
+}
+
+.button-toggle:nth-child(2) {
+  border: 3px solid rgb(198, 123, 19);
+  border-left: black;
+  &.mat-button-toggle-checked {
+    background-color: orange;
+  }
+}
+
+.button-toggle:nth-child(3) {
+  border: 3px solid rgb(163, 202, 7);
+  &.mat-button-toggle-checked {
+    background-color: yellow;
+  }
+}
+
+.button-toggle:nth-child(4) {
+  border: 3px solid rgb(0, 185, 0);
+  &.mat-button-toggle-checked {
+    background-color: green;
+  }
+}
+
+.button-toggle:nth-child(5) {
+  border: 3px solid rgb(23, 36, 177);
+  &.mat-button-toggle-checked {
+    background-color: rgb(63, 49, 248);
+  }
+}
