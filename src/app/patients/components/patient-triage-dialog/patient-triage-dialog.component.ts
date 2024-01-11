@@ -1,5 +1,5 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -42,10 +42,11 @@ import { SexPipe } from '../../pipes/sex.pipe';
   templateUrl: './patient-triage-dialog.component.html',
   styleUrls: ['./patient-triage-dialog.component.scss'],
 })
-export class PatientTriageDialogComponent {
+export class PatientTriageDialogComponent implements OnInit {
   @Output() closePatientDialog = new EventEmitter<void>();
   @Output() triage = new EventEmitter<Triage>();
   @Input({ required: true }) patient!: Patient;
+  @Input({ required: true }) triageOfSelectedPatient!: Triage;
   readonly consciousnessArr: string[] = [
     'A (Alert) – przytomny, skupia uwagę',
     'V (Verbal) – reaguje na polecenia głosowe',
@@ -75,13 +76,18 @@ export class PatientTriageDialogComponent {
 
   constructor(private readonly fb: FormBuilder) {}
 
+  ngOnInit(): void {
+    this.patientTriageForm.patchValue(this.triageOfSelectedPatient);
+  }
+
   onClose(): void {
     this.closePatientDialog.emit();
   }
 
   onSubmit(): void {
     const triageFormValue = this.patientTriageForm.getRawValue();
-    this.triage.emit({ ...triageFormValue });
+    console.log(triageFormValue);
+    this.triage.emit({ ...triageFormValue, patientId: this.patient.id });
     this.closePatientDialog.emit();
   }
 }

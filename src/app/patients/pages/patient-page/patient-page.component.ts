@@ -42,6 +42,7 @@ export class PatientPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.patientPageStore.fetchPatients();
+    this.patientPageStore.fetchTriage();
   }
 
   openDialog(): void {
@@ -53,6 +54,7 @@ export class PatientPageComponent implements OnInit {
   }
 
   openPatientDialog(patient: Patient): void {
+    this.patientPageStore.updatePatienValue(patient);
     this.patientTriageDialogIsOpen = true;
     this.patient = patient;
   }
@@ -62,6 +64,6 @@ export class PatientPageComponent implements OnInit {
   }
 
   postTriage(triage: Triage): void {
-    console.log(triage);
+    this.patientPageStore.postTriage(triage);
   }
 }
