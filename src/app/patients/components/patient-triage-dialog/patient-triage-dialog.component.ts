@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Patient } from '../../models/patient.model';
+import { Triage } from '../../models/triage.model';
 import { AgePipe } from '../../pipes/age.pipe';
 import { SexPipe } from '../../pipes/sex.pipe';
 
@@ -43,6 +44,7 @@ import { SexPipe } from '../../pipes/sex.pipe';
 })
 export class PatientTriageDialogComponent {
   @Output() closePatientDialog = new EventEmitter<void>();
+  @Output() triage = new EventEmitter<Triage>();
   @Input({ required: true }) patient!: Patient;
   readonly consciousnessArr: string[] = [
     'A (Alert) – przytomny, skupia uwagę',
@@ -54,7 +56,7 @@ export class PatientTriageDialogComponent {
   readonly oxygenLevels: number[] = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
   ];
-  readonly patientTriageForm = this.fb.group({
+  readonly patientTriageForm = this.fb.nonNullable.group({
     symptoms: ['', Validators.required],
     allergies: [''],
     medicine: [''],
@@ -78,6 +80,8 @@ export class PatientTriageDialogComponent {
   }
 
   onSubmit(): void {
-    console.log(this.patientTriageForm.getRawValue());
+    const triageFormValue = this.patientTriageForm.getRawValue();
+    this.triage.emit({ ...triageFormValue });
+    this.closePatientDialog.emit();
   }
 }

@@ -9,6 +9,7 @@ import { PatientAddEditDialogComponent } from '../../components/patient-add-edit
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
 import { PatientTriageDialogComponent } from '../../components/patient-triage-dialog/patient-triage-dialog.component';
 import { Patient } from '../../models/patient.model';
+import { Triage } from '../../models/triage.model';
 import { PatientPageStore } from './patient-page.store';
 
 @Component({
@@ -58,5 +59,9 @@ export class PatientPageComponent implements OnInit {
 
   closePatientDialog(): void {
     this.patientTriageDialogIsOpen = false;
+  }
+
+  postTriage(triage: Triage): void {
+    console.log(triage);
   }
 }
