@@ -142,7 +142,8 @@
         <div class="dialog-row">
           <mat-form-field class="form-field">
             <mat-label>Tlenoterapia</mat-label>
-            <mat-select [formControl]="patientTriageForm.controls.saturation">
+            <mat-select
+              [formControl]="patientTriageForm.controls.oxygenTherapy">
               <mat-option
                 *ngFor="let oxygenLevel of oxygenLevels"
                 [value]="oxygenLevel"
