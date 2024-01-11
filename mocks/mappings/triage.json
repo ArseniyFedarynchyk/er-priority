@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/v1/triage"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "patientId": 1,
+        "symptoms": "Ból brzucha",
+        "allergies": "Ibuprofen",
+        "medicine": "Valsacor",
+        "chronicDiseases": "Astma oskrzelowa",
+        "circumstances": "Od 3 w nocy pacjent poczuł silny nagły ból brzucha",
+        "sistolicBloodPressure": "125",
+        "diastolicBloodPressure": "86",
+        "puls": "93",
+        "temperature": "36",
+        "saturation": "99",
+        "oxygenTherapy": 0,
+        "consciousness": "A (Alert) – przytomny, skupia uwagę",
+        "painIntensity": 0,
+        "priority": ""
+      }
+    ]
+  }
+}

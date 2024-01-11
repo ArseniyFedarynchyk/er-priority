@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/triage"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": { "message": "POST request succeed!" }
+  }
+}
