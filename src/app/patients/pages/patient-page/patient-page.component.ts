@@ -63,7 +63,7 @@ export class PatientPageComponent implements OnInit {
     this.patientTriageDialogIsOpen = false;
   }
 
-  postTriage(triage: Triage): void {
-    this.patientPageStore.postTriage(triage);
+  updateTriage(triage: Triage): void {
+    this.patientPageStore.updateTriage(triage);
   }
 }

@@ -101,10 +101,10 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
     );
   });
 
-  readonly postTriage = this.effect<Triage>(($source: Observable<Triage>) => {
+  readonly updateTriage = this.effect<Triage>(($source: Observable<Triage>) => {
     return $source.pipe(
       exhaustMap(triage => {
-        return this.triageService.postTriage(triage);
+        return this.triageService.updateTriage(triage);
       }),
     );
   });

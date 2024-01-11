@@ -1,6 +1,6 @@
 {
   "request": {
-    "method": "POST",
+    "method": "PUT",
     "url": "/v1/triage"
   },
   "response": {

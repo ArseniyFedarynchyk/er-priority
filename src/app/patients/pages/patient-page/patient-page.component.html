@@ -6,7 +6,7 @@
   <erp-patient-triage-dialog
     *ngIf="patientTriageDialogIsOpen"
     (closePatientDialog)="closePatientDialog()"
-    (triage)="postTriage($event)"
+    (triage)="updateTriage($event)"
     [triageOfSelectedPatient]="vm.triageSelected"
     [patient]="patient" />
 </div>

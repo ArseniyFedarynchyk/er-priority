@@ -14,7 +14,7 @@ export class TriageService {
     return this.http.get<Triage[]>(`${environment.apiBaseUrl}v1/triage`);
   }
 
-  postTriage(triage: Triage): Observable<void> {
-    return this.http.post<void>(`${environment.apiBaseUrl}v1/triage`, triage);
+  updateTriage(triage: Triage): Observable<void> {
+    return this.http.put<void>(`${environment.apiBaseUrl}v1/triage`, triage);
   }
 }

@@ -86,7 +86,6 @@ export class PatientTriageDialogComponent implements OnInit {
 
   onSubmit(): void {
     const triageFormValue = this.patientTriageForm.getRawValue();
-    console.log(triageFormValue);
     this.triage.emit({ ...triageFormValue, patientId: this.patient.id });
     this.closePatientDialog.emit();
   }
