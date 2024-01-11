@@ -1,4 +1,5 @@
 export interface Triage {
+  patientId: number;
   symptoms: string;
   allergies: string;
   medicine: string;
