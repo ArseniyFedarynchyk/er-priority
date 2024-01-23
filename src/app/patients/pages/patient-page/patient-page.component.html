@@ -2,7 +2,7 @@
   <erp-patient-list
     (patientTriageDialogOpen)="openPatientDialog($event)"
     (delete)="onDelete($event)"
-    [patientsArray]="vm.patients" />
+    [patientsArray]="vm.filteredPatients" />
   <erp-patient-triage-dialog
     *ngIf="patientTriageDialogIsOpen"
     (closePatientDialog)="closePatientDialog()"

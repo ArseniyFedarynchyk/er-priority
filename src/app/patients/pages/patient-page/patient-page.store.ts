@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, exhaustMap, tap } from 'rxjs';
+import { ToolbarComponent } from 'src/app/shared/components/toolbar/toolbar.component';
 import { Patient } from '../../models/patient.model';
 import { Triage } from '../../models/triage.model';
 import { PatientApiService } from '../../services/patient-api.service';
@@ -12,12 +13,27 @@ export interface PatientPageState {
   patientSelected: Patient | null;
   triage: Triage[];
   isLoading: boolean;
+  searchFormValue: string;
   error: string | null;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PatientPageStore extends ComponentStore<PatientPageState> {
   private readonly patients$ = this.select(state => state.patients);
+  private readonly searchFormValue$ = this.select(
+    state => state.searchFormValue,
+  );
+  private readonly filteredPatients$ = this.select(
+    this.patients$,
+    this.searchFormValue$,
+    (patients, searchFormValue) => {
+      console.log(patients);
+      console.log(searchFormValue);
+      return patients.filter(patient =>
+        patient.pesel.toString().includes(searchFormValue),
+      );
+    },
+  );
   private readonly patintSelected$ = this.select(
     state => state.patientSelected,
   );
@@ -35,6 +51,7 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
   private readonly error$ = this.select(state => state.error);
   readonly vm$ = this.select({
     patients: this.patients$,
+    filteredPatients: this.filteredPatients$,
     triageSelected: this.triageSelected$,
     isLoading: this.isLoading$,
     error: this.error$,
@@ -49,6 +66,7 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
       patientSelected: null,
       triage: [],
       isLoading: false,
+      searchFormValue: '',
       error: null,
     });
   }
@@ -112,6 +130,16 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
   readonly updatePatienValue = this.effect((source$: Observable<Patient>) => {
     return source$.pipe(
       tap(patient => this.patchState({ patientSelected: patient })),
+    );
+  });
+
+  readonly applyFilter = this.effect<
+    ReturnType<ToolbarComponent['searchFilterForm']['getRawValue']>
+  >($source => {
+    return $source.pipe(
+      tap(searchFormValue =>
+        this.patchState({ searchFormValue: searchFormValue.searchFormValue }),
+      ),
     );
   });
 }

@@ -1,7 +1,10 @@
 <mat-toolbar color="primary" class="toolbar">
-  <form class="search-form">
+  <form [formGroup]="searchFilterForm" class="search-form">
     <mat-form-field class="form-field">
-      <input matInput placeholder="Wyszukaj pacjenta (imię, nazwisko, PESEL)" />
+      <input
+        matInput
+        placeholder="Wyszukaj pacjenta (imię, nazwisko, PESEL)"
+        [formControl]="searchFilterForm.controls.searchFormValue" />
     </mat-form-field>
   </form>
 
