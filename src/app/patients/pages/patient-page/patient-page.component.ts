@@ -5,6 +5,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ToolbarComponent } from 'src/app/patients/components/toolbar/toolbar.component';
 import { PatientAddEditDialogComponent } from '../../components/patient-add-edit-dialog/patient-add-edit-dialog.component';
 import { PatientListComponent } from '../../components/patient-list/patient-list.component';
 import { PatientTriageDialogComponent } from '../../components/patient-triage-dialog/patient-triage-dialog.component';
@@ -25,6 +26,7 @@ import { PatientPageStore } from './patient-page.store';
     PatientAddEditDialogComponent,
     MatNativeDateModule,
     PatientTriageDialogComponent,
+    ToolbarComponent,
   ],
   templateUrl: './patient-page.component.html',
   styleUrls: ['./patient-page.component.scss'],

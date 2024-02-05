@@ -1,7 +1,15 @@
+table {
+  margin-bottom: 80px;
+}
+
 .header-row {
   height: 50px;
   font-size: 20px;
   color: rgb(42, 125, 249);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .row {

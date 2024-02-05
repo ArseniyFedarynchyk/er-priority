@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, exhaustMap, tap } from 'rxjs';
-import { ToolbarComponent } from 'src/app/shared/components/toolbar/toolbar.component';
+import { ToolbarComponent } from 'src/app/patients/components/toolbar/toolbar.component';
 import { Patient } from '../../models/patient.model';
 import { Triage } from '../../models/triage.model';
 import { PatientApiService } from '../../services/patient-api.service';
@@ -27,8 +27,6 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
     this.patients$,
     this.searchFormValue$,
     (patients, searchFormValue) => {
-      console.log(patients);
-      console.log(searchFormValue);
       return patients.filter(patient =>
         patient.pesel.toString().includes(searchFormValue),
       );

@@ -1,16 +1,21 @@
-<div class="patient-content" *ngIf="vm$ | async as vm">
-  <erp-patient-list
-    (patientTriageDialogOpen)="openPatientDialog($event)"
-    (delete)="onDelete($event)"
-    [patientsArray]="vm.filteredPatients" />
+<ng-container *ngIf="vm$ | async as vm">
+  <erp-toolbar *ngIf="!patientTriageDialogIsOpen" />
+  <div class="patient-content">
+    <erp-patient-list
+      *ngIf="!patientTriageDialogIsOpen"
+      (patientTriageDialogOpen)="openPatientDialog($event)"
+      (delete)="onDelete($event)"
+      [patientsArray]="vm.filteredPatients" />
+  </div>
   <erp-patient-triage-dialog
     *ngIf="patientTriageDialogIsOpen"
     (closePatientDialog)="closePatientDialog()"
     (triage)="updateTriage($event)"
     [triageOfSelectedPatient]="vm.triageSelected"
     [patient]="patient" />
-</div>
+</ng-container>
 <button
+  *ngIf="!patientTriageDialogIsOpen"
   class="add-btn"
   mat-fab
   matTooltip="Dodaj pacjenta"

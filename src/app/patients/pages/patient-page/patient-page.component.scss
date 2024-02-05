@@ -1,5 +1,9 @@
+$toolbar-height: 90px;
+
 .patient-content {
-  margin-bottom: 80px;
+  height: calc(100% - $toolbar-height);
+  position: sticky;
+  overflow-y: scroll;
 }
 
 .add-btn {

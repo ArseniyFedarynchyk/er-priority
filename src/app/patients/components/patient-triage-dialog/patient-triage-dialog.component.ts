@@ -77,6 +77,7 @@ export class PatientTriageDialogComponent implements OnInit {
   constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit(): void {
+    console.log(this.triageOfSelectedPatient);
     this.patientTriageForm.patchValue(this.triageOfSelectedPatient);
   }
 
