@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 import { PatientPageStore } from 'src/app/patients/pages/patient-page/patient-page.store';
 
 @Component({
-  selector: 'erp-toolbar',
+  selector: 'erp-patient-toolbar',
   standalone: true,
   imports: [
     CommonModule,
@@ -26,8 +26,8 @@ import { PatientPageStore } from 'src/app/patients/pages/patient-page/patient-pa
     ReactiveFormsModule,
     FormsModule,
   ],
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
+  templateUrl: './patient-toolbar.component.html',
+  styleUrls: ['./patient-toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
   readonly searchFilterForm = this.fb.nonNullable.group({

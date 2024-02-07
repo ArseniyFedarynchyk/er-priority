@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IsActiveMatchOptions, Router, RouterOutlet } from '@angular/router';
-import { ToolbarComponent } from './patients/components/toolbar/toolbar.component';
+import { ToolbarComponent } from './patients/components/patient-toolbar/patient-toolbar.component';
 
 @Component({
   selector: 'erp-root',

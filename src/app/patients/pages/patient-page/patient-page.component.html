@@ -1,5 +1,5 @@
 <ng-container *ngIf="vm$ | async as vm">
-  <erp-toolbar *ngIf="!patientTriageDialogIsOpen" />
+  <erp-patient-toolbar *ngIf="!patientTriageDialogIsOpen" />
   <div class="patient-content">
     <erp-patient-list
       *ngIf="!patientTriageDialogIsOpen"
