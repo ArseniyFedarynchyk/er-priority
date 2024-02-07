@@ -27,8 +27,11 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
     this.patients$,
     this.searchFormValue$,
     (patients, searchFormValue) => {
-      return patients.filter(patient =>
-        patient.pesel.toString().includes(searchFormValue),
+      return patients.filter(
+        patient =>
+          patient.pesel.toString().includes(searchFormValue) ||
+          patient.firstName.toLowerCase().includes(searchFormValue) ||
+          patient.secondName.toLowerCase().includes(searchFormValue),
       );
     },
   );
