@@ -27,12 +27,14 @@ export class PatientPageStore extends ComponentStore<PatientPageState> {
     this.patients$,
     this.searchFormValue$,
     (patients, searchFormValue) => {
-      return patients.filter(
-        patient =>
+      searchFormValue = searchFormValue.trim();
+      return patients.filter(patient => {
+        const patientFullName = `${patient.firstName.toLowerCase()} ${patient.secondName.toLowerCase()}`;
+        return (
           patient.pesel.toString().includes(searchFormValue) ||
-          patient.firstName.toLowerCase().includes(searchFormValue) ||
-          patient.secondName.toLowerCase().includes(searchFormValue),
-      );
+          patientFullName.includes(searchFormValue)
+        );
+      });
     },
   );
   private readonly patintSelected$ = this.select(
