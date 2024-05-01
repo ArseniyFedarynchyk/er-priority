@@ -1,27 +1,12 @@
 # ErPriority
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+ErPriority is an application for sorting patients in the emergency department. It uses Angular v.16 for its user interface and strives to meet the design principles of the Google Material Design. ErPriority is still under development and not yet feature-complete. However, the following things are already working:
 
-## Development server
+  * Loging In and Loging Out functionality.
+  * Viewing a list of patients.
+  * Adding patietns, editing patients, adding triage, editing triage, deleting patients (it only sends HTTP requests, but doesn't change the actual state of the application. I'm currently working on this).
+  * Searching for patients using first name, second name or ID number commonly known as PESEL in Poland.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Installation Instructions
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In order to make it work as expected please install Wiremock. Use the following command `npx wiremock`. To launch project locally use `ng serve` command and don't forget to run Wiremock by writting thie command `npm run start-wiremock`.
