@@ -7,7 +7,7 @@
       {
         "and": [
           {
-            "matchesJsonPath": "[?(@.username == 'afedarynchyk')]"
+            "matchesJsonPath": "[?(@.username == 'afed')]"
           },
           {
             "matchesJsonPath": "[?(@.password == 'dzpw#')]"
